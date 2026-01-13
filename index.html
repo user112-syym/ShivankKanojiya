@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shivank | Thumbnail Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background:#0e0e0e;
+  color:#ffffff;
+  line-height:1.6;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:60px 20px 30px;
+}
+
+header h1{
+  font-size:42px;
+  font-weight:600;
+}
+
+header p{
+  margin-top:10px;
+  color:#bdbdbd;
+  font-size:18px;
+}
+
+/* NAV */
+nav{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+nav a{
+  color:#00ffd5;
+  text-decoration:none;
+  margin:0 18px;
+  font-size:16px;
+}
+
+/* SECTIONS */
+section{
+  padding:40px 6%;
+}
+
+h2{
+  text-align:center;
+  font-size:30px;
+  margin-bottom:25px;
+}
+
+/* ABOUT */
+.about{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  color:#cfcfcf;
+  font-size:17px;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:12px;
+  cursor:pointer;
+  transition:transform 0.3s ease;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* POPUP */
+.popup{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.popup img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+
+.popup span{
+  position:absolute;
+  top:30px;
+  right:40px;
+  font-size:40px;
+  cursor:pointer;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+.contact p{
+  color:#cfcfcf;
+  margin-bottom:20px;
+}
+
+.contact a{
+  display:inline-block;
+  margin:10px;
+  padding:12px 28px;
+  border:1px solid #00ffd5;
+  border-radius:30px;
+  color:#00ffd5;
+  text-decoration:none;
+  font-size:16px;
+}
+
+.contact a:hover{
+  background:#00ffd5;
+  color:#000;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:#777;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Shivank</h1>
+  <p>Thumbnail & Graphic Designer for YouTube Creators</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p class="about">
+    I am a freelance <b>Thumbnail & Graphic Designer</b> helping YouTubers and content creators
+    increase their <b>click-through rate and audience engagement</b>.
+    My focus is on creating clean, high-impact thumbnails that attract views and convert impressions into clicks.
+    Available for <b>paid freelance projects</b>.
+  </p>
+</section>
+
+<section id="portfolio">
+  <h2>Thumbnail Portfolio</h2>
+
+  <div class="gallery">
+    <img src="thumb1.jpg" onclick="openPopup(this.src)">
+    <img src="thumb2.jpg" onclick="openPopup(this.src)">
+    <img src="thumb3.jpg" onclick="openPopup(this.src)">
+    <img src="thumb4.jpg" onclick="openPopup(this.src)">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Work With Me</h2>
+  <p>Interested in professional thumbnails for your channel?<br>
+     Let’s discuss your project.</p>
+
+  <a href="mailto:yourmail@gmail.com">Email Me</a>
+  <a href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+  <a href="https://instagram.com/">Instagram</a>
+</section>
+
+<footer>
+  © 2026 Shivank | Thumbnail Designer
+</footer>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <span onclick="closePopup()">&times;</span>
+  <img id="popupImg">
+</div>
+
+<script>
+function openPopup(src){
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popupImg").src=src;
+}
+
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
